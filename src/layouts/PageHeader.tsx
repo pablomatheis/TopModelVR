@@ -10,7 +10,7 @@ export function PageHeader() {
     return <div className='flex gap-4 lg:gap-20 justify-between mx-3'>
         <div className={`md:gap-2 flex-shrink-0 ${showFullWidthSearch ? 'hidden' : 'flex' }`}>
             <a href='/'>
-                <img alt='TopModelVR Logo' className='h-20 mx-5 py-3' src={logo} />
+                <img alt='TopModelVR Logo' className='h-20 ml-5 py-3' src={logo} />
             </a>
         </div>
         <form className={`gap-4 flex-grow justify-center ${showFullWidthSearch ? 'flex' : 'hidden md:flex' }`}>
