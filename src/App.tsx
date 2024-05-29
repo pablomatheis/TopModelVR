@@ -3,10 +3,12 @@ import {CategoryPills} from "./components/CategoryPills.tsx";
 import {categories, videos} from "./data/home.ts";
 import {useState} from "react";
 import {VideoGridItem} from "./components/VideoGridItem.tsx";
+import { Analytics } from "@vercel/analytics/react"
 
 export default function App() {
     const [selectedCategory, setSelectedCategory] = useState(categories[0])
     return <div className="max-h-screen flex flex-col scrollbar-hide">
+        <Analytics/>
         <PageHeader />
         <div className={'grid grid-cols-[auto,1fr] flex-grow-1 overflow-auto scrollbar-hide'}>
             <div className={'overflow-x-hidden px-5 rounded-lg scrollbar-hide'}>
