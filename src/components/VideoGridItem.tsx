@@ -9,10 +9,8 @@ type VideoGridItemProps = {
         profileUrl: string
     }
     views: number
-    postedAt : number
     duration: number
     thumbnailUrl: string
-    videoUrl: string
 }
 
 
