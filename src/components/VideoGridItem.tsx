@@ -10,6 +10,7 @@ type VideoGridItemProps = {
     }
     views: number
     duration: number
+    videoUrl: string
     thumbnailUrl: string
 }
 
@@ -23,11 +24,15 @@ export function VideoGridItem({
     channel,
     views,
     duration,
+    videoUrl,
     thumbnailUrl
+
 } : VideoGridItemProps) {
     return <div className={'flex flex-col gap-2 scrollbar-hide'}>
-        <a href={`/watch?v=${id}`} className={'relative aspect-video'}>
-            <img alt={'Thumbnail'} src={thumbnailUrl} className={'block w-full h-full object-cover rounded-lg'} />
+        <a href={videoUrl} className={'relative aspect-video'}>
+            <img alt={'Thumbnail'}
+                 src={thumbnailUrl}
+                 className={'block w-full h-full object-cover rounded-lg'}/>
             <div className={'absolute bottom-1 right-1 bg-black text-white text-sm px-0.5 rounded'}>
                 {formatDuration(duration)}
             </div>
@@ -38,7 +43,7 @@ export function VideoGridItem({
             </a>
 
             <div className="flex flex-col w-screen">
-                <a href={`/watch?v=${id}`} className="font-bold text-white">
+                <a href={`/watch?v=${id}`} className="text-white">
                     {title}
                 </a>
                 <div className="text-white text-opacity-50 text-sm flex justify-between pr-1.5">

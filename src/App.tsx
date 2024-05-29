@@ -15,7 +15,7 @@ export default function App() {
                 </div>
                 <div className={'grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] scrollbar-hide'}>
                     {videos.map(video => (
-                        <VideoGridItem id={video.id} title={video.title} channel={video.channel} views={video.views} duration={video.duration} thumbnailUrl={video.thumbnailUrl}/>
+                        <VideoGridItem id={video.id} title={video.title} channel={video.channel} views={video.views} duration={video.duration} videoUrl={video.videoUrl} thumbnailUrl={video.thumbnailUrl}/>
                     ))}
                 </div>
             </div>
