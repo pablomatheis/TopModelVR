@@ -14,7 +14,7 @@ export function PageHeader() {
             </a>
         </div>
         <form className={`gap-4 flex-grow justify-center ${showFullWidthSearch ? 'flex' : 'hidden md:flex' }`}>
-            <div className={'flex flex-grow max-w-[600px] items-center'}>
+            <div className={'flex flex-grow max-w-[600px] py-5 items-center'}>
                 <Button onClick={() => setShowFullWidthSearch(false)} size={'icon'} variant={'ghost'} className={`mx-2 ${showFullWidthSearch ? "flex" : "hidden"}`}>
                     <ArrowLeft color={'white'}/>
                 </Button>
