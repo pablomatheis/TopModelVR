@@ -13,11 +13,11 @@ const useQuery = () => {
 
 const VideoPage: React.FC = () => {
   const query = useQuery();
-  const url = query.get('url'); // Access the 'url' query parameter
+  const myurl = query.get('url') ?? '';
   return (
     <div>
         <Analytics />
-        <Video src={url}/>
+        <Video src={myurl}/>
     </div>
   );
 };
