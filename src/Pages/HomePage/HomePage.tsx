@@ -3,10 +3,12 @@ import {categories, videos} from "../../data/home.ts";
 import {PageHeader} from "../../layouts/PageHeader.tsx";
 import {CategoryPills} from "../../components/CategoryPills.tsx";
 import {VideoGridItem} from "../../components/VideoGridItem.tsx";
+import {shuffleArray} from "../../utils/ShuffleVideos.tsx";
 
 
 const HomePage = () => {
     const [selectedCategory, setSelectedCategory] = useState(categories[0])
+    const shuffledVideos = shuffleArray(videos);
     return <div className="max-h-screen flex flex-col scrollbar-hide">
         <PageHeader />
         <div className={'grid grid-cols-[auto,1fr] flex-grow-1 overflow-auto scrollbar-hide'}>
@@ -15,7 +17,7 @@ const HomePage = () => {
                     <CategoryPills categories={categories} selectedCategory={selectedCategory} onSelect={setSelectedCategory}/>
                 </div>
                 <div className={'grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] scrollbar-hide'}>
-                    {videos.map(video => (
+                    {shuffledVideos.map(video => (
                         <VideoGridItem id={video.id} title={video.title} channel={video.channel} views={video.views} duration={video.duration} videoUrl={video.videoUrl} thumbnailUrl={video.thumbnailUrl}/>
                     ))}
                 </div>
