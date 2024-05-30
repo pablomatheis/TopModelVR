@@ -29,7 +29,7 @@ export function VideoGridItem({
 
 } : VideoGridItemProps) {
     return <div className={'flex flex-col gap-2 scrollbar-hide'}>
-        <a href={videoUrl} className={'relative aspect-video'}>
+        <a href={`/video/${id}?url=${encodeURIComponent(videoUrl)}`} className={'relative aspect-video'}>
             <img alt={'Thumbnail'}
                  src={thumbnailUrl}
                  className={'block w-full h-full object-cover rounded-lg'}/>
