@@ -3,10 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { Video } from "@triyanox/react-video";
 
-interface DetailParams {
-  id: string;
-}
-
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 };
